@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{title}}</title>
+  <style>
+    /* Estilos básicos */
+    body { font-family: Arial, sans-serif; }
+    form { margin: 20px; padding: 10px; border: 1px solid #ccc; }
+    li { margin: 5px; }
+  </style>
+</head>
+<body>
+  {{{body}}} <!-- Contenido dinámico de las vistas -->
+{{#if isRealTime}}
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/realTimeproducts.js"></script>
+{{/if}}
+</body>
+</html>
