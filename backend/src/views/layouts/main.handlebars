@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{title}}</title>
+  <style>
+    /* Estilos básicos */
+    body { font-family: Arial, sans-serif; }
+    form { margin: 20px; padding: 10px; border: 1px solid #ccc; }
+    li { margin: 5px; }
+  </style>
+</head>
+<body>
+  {{{body}}} <!-- Contenido dinámico de las vistas -->
+
+  <!-- ✅ Confirmar que main.handlebars se está cargando -->
+  <script>
+    console.log("✅ Cargando main.handlebars...");
+  </script>
+
+  <!-- Cargar socket.io solo si es necesario -->
+  <script src="/socket.io/socket.io.js"></script>
+
+  <!-- Cargar realTimeproducts.js solo en la vista correspondiente -->
+  {{#if isRealTime}}
+    <script src="/js/realTimeproducts.js"></script>
+    <script>
+      console.log("✅ Cargando realTimeproducts.js desde main.handlebars");
+    </script>
+  {{/if}}
+</body>
+</html>

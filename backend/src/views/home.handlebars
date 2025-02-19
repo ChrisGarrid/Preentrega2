@@ -1,0 +1,14 @@
+<h1>{{title}}</h1>
+
+<!-- ✅ Confirmar que la vista home.handlebars se está cargando correctamente -->
+<script>
+  console.log("✅ Cargando vista home.handlebars...");
+</script>
+
+<ul>
+  {{#each products}}
+    <li>{{this.title}} - ${{this.price}}</li>
+  {{else}}
+    <li>No hay productos disponibles</li>
+  {{/each}}
+</ul>

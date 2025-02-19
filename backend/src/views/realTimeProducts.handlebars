@@ -1,0 +1,26 @@
+<h1>{{title}}</h1>
+
+<!-- ✅ Confirmar que la vista se está cargando correctamente -->
+<script>
+  console.log("✅ Cargando vista realTimeProducts.handlebars...");
+</script>
+
+<form id="formAddProduct">
+  <input type="text" name="title" placeholder="Título" required>
+  <input type="number" name="price" placeholder="Precio" min="0" step="0.01" required>
+  <button type="submit">Agregar</button>
+</form>
+
+<ul id="productList">
+  {{#each products}}
+    <li data-id="{{this.id}}">
+      {{this.title}} - ${{this.price}}
+      <button class="btnDelete">Eliminar</button>
+    </li>
+  {{/each}}
+</ul>
+
+<!-- ✅ Confirmar que el script de WebSocket se está cargando -->
+<script>
+  console.log("✅ Ejecutando scripts en realTimeProducts.handlebars");
+</script>
